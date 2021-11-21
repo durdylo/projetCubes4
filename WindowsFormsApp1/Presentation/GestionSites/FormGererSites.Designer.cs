@@ -45,7 +45,7 @@
             // lbl_City
             // 
             this.lbl_City.AutoSize = true;
-            this.lbl_City.Location = new System.Drawing.Point(74, 109);
+            this.lbl_City.Location = new System.Drawing.Point(74, 112);
             this.lbl_City.Name = "lbl_City";
             this.lbl_City.Size = new System.Drawing.Size(26, 13);
             this.lbl_City.TabIndex = 0;
@@ -89,7 +89,7 @@
             // 
             // bt_register
             // 
-            this.bt_register.Location = new System.Drawing.Point(346, 160);
+            this.bt_register.Location = new System.Drawing.Point(346, 144);
             this.bt_register.Name = "bt_register";
             this.bt_register.Size = new System.Drawing.Size(75, 23);
             this.bt_register.TabIndex = 5;
@@ -98,7 +98,7 @@
             // 
             // bt_modif
             // 
-            this.bt_modif.Location = new System.Drawing.Point(346, 206);
+            this.bt_modif.Location = new System.Drawing.Point(346, 196);
             this.bt_modif.Name = "bt_modif";
             this.bt_modif.Size = new System.Drawing.Size(75, 23);
             this.bt_modif.TabIndex = 6;
@@ -107,7 +107,7 @@
             // 
             // bt_sup
             // 
-            this.bt_sup.Location = new System.Drawing.Point(346, 258);
+            this.bt_sup.Location = new System.Drawing.Point(346, 240);
             this.bt_sup.Name = "bt_sup";
             this.bt_sup.Size = new System.Drawing.Size(75, 23);
             this.bt_sup.TabIndex = 7;
@@ -155,7 +155,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 597);
+            this.ClientSize = new System.Drawing.Size(1100, 597);
             this.Controls.Add(this.bt_end);
             this.Controls.Add(this.bt_next);
             this.Controls.Add(this.bt_precede);
