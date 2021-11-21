@@ -26,5 +26,10 @@ namespace WindowsFormsApp1.Presentation.GestionSites
         {
 
         }
+
+        private void FormGererSites_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

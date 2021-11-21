@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.gestionSites;
+using static WindowsFormsApp1.gestionSites.GestionSites;
+using static WindowsFormsApp1.gestionSites.Site;
+
+
 
 namespace WindowsFormsApp1
 {
@@ -13,8 +18,12 @@ namespace WindowsFormsApp1
         /// </summary>
         [STAThread]
         static void Main()
-        {
+        {   
+            
+
+            Console.WriteLine("coucou");
             Application.EnableVisualStyles();
+
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
         }

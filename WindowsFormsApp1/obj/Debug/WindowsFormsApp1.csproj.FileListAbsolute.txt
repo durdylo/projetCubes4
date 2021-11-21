@@ -9,3 +9,4 @@ C:\Users\denis\OneDrive\Documents\cesi\projet_4\WindowsFormsApp1\obj\Debug\Windo
 C:\Users\denis\OneDrive\Documents\cesi\projet_4\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
 C:\Users\denis\OneDrive\Documents\cesi\projet_4\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 C:\Users\denis\OneDrive\Documents\cesi\projet_4\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\denis\OneDrive\Documents\cesi\projet_4\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
