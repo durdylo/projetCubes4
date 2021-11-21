@@ -60,7 +60,7 @@
     <Compile Include="FormApplication.Designer.cs">
       <DependentUpon>FormApplication.cs</DependentUpon>
     </Compile>
-    <Compile Include="gestionSites\GestionSites.cs" />
+    <Compile Include="gestionSites\GestionnaireSites.cs" />
     <Compile Include="gestionSites\Site.cs" />
     <Compile Include="Presentation\GestionSites\FormGererSites.cs">
       <SubType>Form</SubType>

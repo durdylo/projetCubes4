@@ -9,7 +9,7 @@ namespace WindowsFormsApp1.gestionSites
     public class Site
     {
         int id;
-        int city;
+        string city;
         DateTime DateCreate;
         DateTime DateModif;
         public int Id { get => id; set => id = value; }

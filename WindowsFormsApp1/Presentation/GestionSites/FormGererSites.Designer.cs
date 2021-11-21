@@ -43,6 +43,7 @@
             this.lbl_create = new System.Windows.Forms.Label();
             this.lbl_modif = new System.Windows.Forms.Label();
             this.Site = new System.Windows.Forms.GroupBox();
+            this.lbl_id = new System.Windows.Forms.Label();
             this.Site.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -128,6 +129,7 @@
             this.bt_start.TabIndex = 8;
             this.bt_start.Text = "Début";
             this.bt_start.UseVisualStyleBackColor = true;
+            this.bt_start.Click += new System.EventHandler(this.bt_start_Click);
             // 
             // bt_precede
             // 
@@ -137,6 +139,7 @@
             this.bt_precede.TabIndex = 9;
             this.bt_precede.Text = "Précédent";
             this.bt_precede.UseVisualStyleBackColor = true;
+            this.bt_precede.Click += new System.EventHandler(this.bt_precede_Click);
             // 
             // bt_next
             // 
@@ -146,6 +149,7 @@
             this.bt_next.TabIndex = 10;
             this.bt_next.Text = "Suivant";
             this.bt_next.UseVisualStyleBackColor = true;
+            this.bt_next.Click += new System.EventHandler(this.bt_next_Click);
             // 
             // bt_end
             // 
@@ -190,11 +194,21 @@
             this.Site.TabStop = false;
             this.Site.Text = "Site";
             // 
+            // lbl_id
+            // 
+            this.lbl_id.AutoSize = true;
+            this.lbl_id.Location = new System.Drawing.Point(360, 366);
+            this.lbl_id.Name = "lbl_id";
+            this.lbl_id.Size = new System.Drawing.Size(10, 13);
+            this.lbl_id.TabIndex = 15;
+            this.lbl_id.Text = "-";
+            // 
             // FormGererSites
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1100, 597);
+            this.Controls.Add(this.lbl_id);
             this.Controls.Add(this.Site);
             this.Controls.Add(this.bt_end);
             this.Controls.Add(this.bt_next);
@@ -210,6 +224,7 @@
             this.Site.ResumeLayout(false);
             this.Site.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -230,5 +245,6 @@
         private System.Windows.Forms.Label lbl_create;
         private System.Windows.Forms.Label lbl_modif;
         private System.Windows.Forms.GroupBox Site;
+        private System.Windows.Forms.Label lbl_id;
     }
 }

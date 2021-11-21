@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.gestionSites;
-using static WindowsFormsApp1.gestionSites.GestionSites;
+using static WindowsFormsApp1.gestionSites.GestionnaireSites;
 using static WindowsFormsApp1.gestionSites.Site;
 
 
