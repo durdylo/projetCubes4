@@ -24,10 +24,7 @@ namespace WindowsFormsApp1.gestionSites
             return site.Id;
         }
 
-        internal static void Ajouter()
-        {
-            throw new NotImplementedException();
-        }
+      
 
         public void Supprimer(int Id)
         {

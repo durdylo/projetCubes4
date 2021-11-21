@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class FormApplicaation
+    partial class FormApplication
     {
         /// <summary>
         /// Required designer variable.
@@ -66,8 +66,8 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "FormApplicaation";
-            this.Text = "FormApplicaation";
+            this.Name = "FormApplication";
+            this.Text = "FormApplication";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

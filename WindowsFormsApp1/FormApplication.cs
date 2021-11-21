@@ -11,9 +11,9 @@ using WindowsFormsApp1.Presentation.GestionSites;
 
 namespace WindowsFormsApp1
 {
-    public partial class FormApplicaation : Form
+    public partial class FormApplication : Form
     {
-        public FormApplicaation()
+        public FormApplication()
         {
             InitializeComponent();
         }
