@@ -40,9 +40,10 @@
             this.bt_precede = new System.Windows.Forms.Button();
             this.bt_next = new System.Windows.Forms.Button();
             this.bt_end = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbl_create = new System.Windows.Forms.Label();
+            this.lbl_modif = new System.Windows.Forms.Label();
             this.Site = new System.Windows.Forms.GroupBox();
+            this.lbl_id = new System.Windows.Forms.Label();
             this.Site.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,6 +72,7 @@
             this.bt_new.TabIndex = 2;
             this.bt_new.Text = "Nouveau";
             this.bt_new.UseVisualStyleBackColor = true;
+            this.bt_new.Click += new System.EventHandler(this.bt_new_Click);
             // 
             // lbl_dateCreate
             // 
@@ -99,6 +101,7 @@
             this.bt_register.TabIndex = 5;
             this.bt_register.Text = "Enregistrer";
             this.bt_register.UseVisualStyleBackColor = true;
+            this.bt_register.Click += new System.EventHandler(this.bt_register_Click);
             // 
             // bt_modif
             // 
@@ -126,6 +129,7 @@
             this.bt_start.TabIndex = 8;
             this.bt_start.Text = "Début";
             this.bt_start.UseVisualStyleBackColor = true;
+            this.bt_start.Click += new System.EventHandler(this.bt_start_Click);
             // 
             // bt_precede
             // 
@@ -135,6 +139,7 @@
             this.bt_precede.TabIndex = 9;
             this.bt_precede.Text = "Précédent";
             this.bt_precede.UseVisualStyleBackColor = true;
+            this.bt_precede.Click += new System.EventHandler(this.bt_precede_Click);
             // 
             // bt_next
             // 
@@ -144,6 +149,7 @@
             this.bt_next.TabIndex = 10;
             this.bt_next.Text = "Suivant";
             this.bt_next.UseVisualStyleBackColor = true;
+            this.bt_next.Click += new System.EventHandler(this.bt_next_Click);
             // 
             // bt_end
             // 
@@ -154,31 +160,32 @@
             this.bt_end.Text = "Fin";
             this.bt_end.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.bt_end.UseVisualStyleBackColor = true;
+            this.bt_end.Click += new System.EventHandler(this.bt_end_Click);
             // 
-            // label1
+            // lbl_create
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(159, 113);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(10, 13);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "-";
+            this.lbl_create.AutoSize = true;
+            this.lbl_create.Location = new System.Drawing.Point(159, 113);
+            this.lbl_create.Name = "lbl_create";
+            this.lbl_create.Size = new System.Drawing.Size(10, 13);
+            this.lbl_create.TabIndex = 12;
+            this.lbl_create.Text = "-";
             // 
-            // label2
+            // lbl_modif
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(159, 148);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(10, 13);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "-";
+            this.lbl_modif.AutoSize = true;
+            this.lbl_modif.Location = new System.Drawing.Point(159, 148);
+            this.lbl_modif.Name = "lbl_modif";
+            this.lbl_modif.Size = new System.Drawing.Size(10, 13);
+            this.lbl_modif.TabIndex = 13;
+            this.lbl_modif.Text = "-";
             // 
             // Site
             // 
             this.Site.Controls.Add(this.txt_City);
-            this.Site.Controls.Add(this.label2);
+            this.Site.Controls.Add(this.lbl_modif);
             this.Site.Controls.Add(this.lbl_City);
-            this.Site.Controls.Add(this.label1);
+            this.Site.Controls.Add(this.lbl_create);
             this.Site.Controls.Add(this.lbl_dateCreate);
             this.Site.Controls.Add(this.lbl_dateModif);
             this.Site.Location = new System.Drawing.Point(35, 104);
@@ -188,11 +195,21 @@
             this.Site.TabStop = false;
             this.Site.Text = "Site";
             // 
+            // lbl_id
+            // 
+            this.lbl_id.AutoSize = true;
+            this.lbl_id.Location = new System.Drawing.Point(360, 366);
+            this.lbl_id.Name = "lbl_id";
+            this.lbl_id.Size = new System.Drawing.Size(10, 13);
+            this.lbl_id.TabIndex = 15;
+            this.lbl_id.Text = "-";
+            // 
             // FormGererSites
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1100, 597);
+            this.Controls.Add(this.lbl_id);
             this.Controls.Add(this.Site);
             this.Controls.Add(this.bt_end);
             this.Controls.Add(this.bt_next);
@@ -208,6 +225,7 @@
             this.Site.ResumeLayout(false);
             this.Site.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -225,8 +243,9 @@
         private System.Windows.Forms.Button bt_precede;
         private System.Windows.Forms.Button bt_next;
         private System.Windows.Forms.Button bt_end;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbl_create;
+        private System.Windows.Forms.Label lbl_modif;
         private System.Windows.Forms.GroupBox Site;
+        private System.Windows.Forms.Label lbl_id;
     }
 }
