@@ -160,6 +160,7 @@
             this.bt_end.Text = "Fin";
             this.bt_end.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.bt_end.UseVisualStyleBackColor = true;
+            this.bt_end.Click += new System.EventHandler(this.bt_end_Click);
             // 
             // lbl_create
             // 

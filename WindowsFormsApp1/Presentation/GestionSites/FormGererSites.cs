@@ -74,5 +74,11 @@ namespace WindowsFormsApp1.Presentation.GestionSites
             Site site = new GestionnaireSites().Next(int.Parse(lbl_id.Text));
             this.Afficher(site);
         }
+
+        private void bt_end_Click(object sender, EventArgs e)
+        {
+            Site site = new GestionnaireSites().End();
+            this.Afficher(site);
+        }
     }
 }
