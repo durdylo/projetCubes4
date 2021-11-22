@@ -60,12 +60,15 @@
     <Compile Include="FormApplication.Designer.cs">
       <DependentUpon>FormApplication.cs</DependentUpon>
     </Compile>
-    <Compile Include="gestionSites\GestionnaireSites.cs" />
+	  <Compile Include="gestionServices\GestionServices.cs" />
+	  <Compile Include="gestionServices\Services.cs" />
+
+	  <Compile Include="gestionSites\GestionnaireSites.cs" />
     <Compile Include="gestionSites\Site.cs" />
-    <Compile Include="Presentation\GestionSites\FormGererSites.cs">
+    <Compile Include="gestionSites\Presentation\GestionSites\FormGererSites.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\GestionSites\FormGererSites.Designer.cs">
+    <Compile Include="gestionSites\Presentation\GestionSites\FormGererSites.Designer.cs">
       <DependentUpon>FormGererSites.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -76,7 +79,7 @@
     <EmbeddedResource Include="FormApplication.resx">
       <DependentUpon>FormApplication.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\GestionSites\FormGererSites.resx">
+    <EmbeddedResource Include="gestionSites\Presentation\GestionSites\FormGererSites.resx">
       <DependentUpon>FormGererSites.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
