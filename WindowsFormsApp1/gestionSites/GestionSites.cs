@@ -9,7 +9,7 @@ namespace WindowsFormsApp1.gestionSites
 {
     public class GestionSites
     {
-        List <Site> liste_sites = new List<Site>() ;
+        List <Site> liste_sites = new List<Site>();
         private static int NombreSites;
         public int Ajouter(Site site)
         {
@@ -24,11 +24,7 @@ namespace WindowsFormsApp1.gestionSites
             return site.Id;
         }
 
-        internal static void Ajouter()
-        {
-            throw new NotImplementedException();
-        }
-
+      
         public void Supprimer(int Id)
         {
             Site site = this.SearchById(Id);

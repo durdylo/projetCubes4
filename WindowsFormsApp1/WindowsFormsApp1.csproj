@@ -60,8 +60,10 @@
     <Compile Include="FormApplicaation.Designer.cs">
       <DependentUpon>FormApplicaation.cs</DependentUpon>
     </Compile>
+    <Compile Include="gestionServices\Services.cs" />
+    <Compile Include="gestionServices\GestionServices.cs" />
     <Compile Include="gestionSites\GestionSites.cs" />
-    <Compile Include="gestionSites\Sites.cs" />
+    <Compile Include="gestionSites\Site.cs" />
     <Compile Include="Presentation\GestionSites\FormGererSites.cs">
       <SubType>Form</SubType>
     </Compile>
