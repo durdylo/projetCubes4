@@ -31,13 +31,22 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.sitesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gérerLesSitesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.voirLesSitesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.servicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gérerLesServicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.voirLesServicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.utilisateursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gérerLesUtilsateursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.voirLesUtilisateursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sitesToolStripMenuItem});
+            this.sitesToolStripMenuItem,
+            this.servicesToolStripMenuItem,
+            this.utilisateursToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -47,7 +56,8 @@
             // sitesToolStripMenuItem
             // 
             this.sitesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gérerLesSitesToolStripMenuItem});
+            this.gérerLesSitesToolStripMenuItem,
+            this.voirLesSitesToolStripMenuItem});
             this.sitesToolStripMenuItem.Name = "sitesToolStripMenuItem";
             this.sitesToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.sitesToolStripMenuItem.Text = "Sites";
@@ -59,7 +69,56 @@
             this.gérerLesSitesToolStripMenuItem.Text = "Gérer les sites";
             this.gérerLesSitesToolStripMenuItem.Click += new System.EventHandler(this.gérerLesSitesToolStripMenuItem_Click);
             // 
-            // FormApplicaation
+            // voirLesSitesToolStripMenuItem
+            // 
+            this.voirLesSitesToolStripMenuItem.Name = "voirLesSitesToolStripMenuItem";
+            this.voirLesSitesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.voirLesSitesToolStripMenuItem.Text = "Voir les sites";
+            this.voirLesSitesToolStripMenuItem.Click += new System.EventHandler(this.voirLesSitesToolStripMenuItem_Click);
+            // 
+            // servicesToolStripMenuItem
+            // 
+            this.servicesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gérerLesServicesToolStripMenuItem,
+            this.voirLesServicesToolStripMenuItem});
+            this.servicesToolStripMenuItem.Name = "servicesToolStripMenuItem";
+            this.servicesToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.servicesToolStripMenuItem.Text = "Services";
+            // 
+            // gérerLesServicesToolStripMenuItem
+            // 
+            this.gérerLesServicesToolStripMenuItem.Name = "gérerLesServicesToolStripMenuItem";
+            this.gérerLesServicesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gérerLesServicesToolStripMenuItem.Text = "Gérer les services";
+            // 
+            // voirLesServicesToolStripMenuItem
+            // 
+            this.voirLesServicesToolStripMenuItem.Name = "voirLesServicesToolStripMenuItem";
+            this.voirLesServicesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.voirLesServicesToolStripMenuItem.Text = "Voir les services";
+            // 
+            // utilisateursToolStripMenuItem
+            // 
+            this.utilisateursToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gérerLesUtilsateursToolStripMenuItem,
+            this.voirLesUtilisateursToolStripMenuItem});
+            this.utilisateursToolStripMenuItem.Name = "utilisateursToolStripMenuItem";
+            this.utilisateursToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
+            this.utilisateursToolStripMenuItem.Text = "Utilisateurs";
+            // 
+            // gérerLesUtilsateursToolStripMenuItem
+            // 
+            this.gérerLesUtilsateursToolStripMenuItem.Name = "gérerLesUtilsateursToolStripMenuItem";
+            this.gérerLesUtilsateursToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gérerLesUtilsateursToolStripMenuItem.Text = "Gérer les utilsateurs";
+            // 
+            // voirLesUtilisateursToolStripMenuItem
+            // 
+            this.voirLesUtilisateursToolStripMenuItem.Name = "voirLesUtilisateursToolStripMenuItem";
+            this.voirLesUtilisateursToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.voirLesUtilisateursToolStripMenuItem.Text = "Voir les utilisateurs";
+            // 
+            // FormApplication
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -80,5 +139,12 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem sitesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gérerLesSitesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem voirLesSitesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem servicesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gérerLesServicesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem voirLesServicesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem utilisateursToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gérerLesUtilsateursToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem voirLesUtilisateursToolStripMenuItem;
     }
 }

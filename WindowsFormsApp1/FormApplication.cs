@@ -23,5 +23,10 @@ namespace WindowsFormsApp1
             FormGererSites form = new FormGererSites();
             form.Show();
         }
+
+        private void voirLesSitesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
