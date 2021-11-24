@@ -9,11 +9,8 @@ namespace WindowsFormsApp1.gestionSites
 {
     public class GestionnaireSites
     {
-<<<<<<< HEAD:WindowsFormsApp1/gestionSites/GestionSites.cs
-        List <Site> liste_sites = new List<Site>();
-=======
+
         static List<Site> liste_sites = new List<Site>() ;
->>>>>>> a89c970bb6f2fb999bda8841c5c5dc79ef856acd:WindowsFormsApp1/gestionSites/GestionnaireSites.cs
         private static int NombreSites;
 
 
@@ -31,11 +28,6 @@ namespace WindowsFormsApp1.gestionSites
             return site.Id;
         }
 
-      
-<<<<<<< HEAD:WindowsFormsApp1/gestionSites/GestionSites.cs
-=======
-
->>>>>>> a89c970bb6f2fb999bda8841c5c5dc79ef856acd:WindowsFormsApp1/gestionSites/GestionnaireSites.cs
         public void Supprimer(int Id)
         {
             Site site = this.SearchById(Id);
