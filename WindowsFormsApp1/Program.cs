@@ -23,7 +23,6 @@ namespace WindowsFormsApp1
         {
             Site site = new Site();
             GestionnaireSites gestionSite = new GestionnaireSites();
-            
             site.City = "Paris";
             Application.EnableVisualStyles();
             gestionSite.Ajouter(site);
