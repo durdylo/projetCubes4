@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,13 @@ namespace WindowsFormsApp1.gestionServices
     {
         List<Services> liste_service = new List<Services>();
         private static int NombreSites;
+
+        private SqlConnection connect;
+
+        public GestionServices(SqlConnection cnx)
+        {
+            this.connect = cnx;
+        }
         public int Ajouter(Services service)
         {
             if (service.Id != 0)

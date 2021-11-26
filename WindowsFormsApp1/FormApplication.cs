@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.gestionServices;
+using WindowsFormsApp1.gestionServices.Présentation.GestionServices;
 using WindowsFormsApp1.gestionSites;
 using WindowsFormsApp1.Presentation.GestionSites;
 
@@ -19,7 +21,8 @@ namespace WindowsFormsApp1
 
         public static SqlConnection cnx = new SqlConnection(connexionString);
         GestionnaireSites gestionSite = new GestionnaireSites(cnx);
-     
+        GestionServices gestionServices = new GestionServices(cnx);
+
 
         public FormApplication()
         {
@@ -35,6 +38,9 @@ namespace WindowsFormsApp1
 
         private void voirLesSitesToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            FormGererServices form = new FormGererServices();
+            form.gererSites = gestionSite;
+            form.Show();
 
         }
 
