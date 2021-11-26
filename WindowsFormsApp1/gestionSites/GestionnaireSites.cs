@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,25 +11,43 @@ namespace WindowsFormsApp1.gestionSites
 {
     public class GestionnaireSites
     {
+        private SqlConnection connect;
+
+        public GestionnaireSites(SqlConnection cnx)
+        {
+            this.connect = cnx;
+        }
+
         static List<Site> liste_sites = new List<Site>() ;
         private static int NombreSites;
 
 
         public int Ajouter(Site site)
         {
-            if(site.Id != 0)
-            
-                throw new AjouterObjetExistantException("Vous essayez d'ajouter un objet déjà existant");
-            else
+            /*  if(site.Id != 0)
+
+                  throw new AjouterObjetExistantException("Vous essayez d'ajouter un objet déjà existant");
+              else
+              {
+                  site.Id = ++GestionnaireSites.NombreSites;
+                  site.DateCreate1 = DateTime.Now;    
+
+                  liste_sites.Add(site);
+              }
+              return site.Id;*/
+
+            string cmdString = "INSERT INTO Site (City) VALUES (@val1)";
+            using (SqlCommand comm = new SqlCommand(cmdString, this.connect))
             {
-                site.Id = ++GestionnaireSites.NombreSites;
-                site.DateCreate1 = DateTime.Now;    
-                liste_sites.Add(site);
+                this.connect.Open();
+                comm.Parameters.AddWithValue("@val1", site.City);
+                int res = comm.ExecuteNonQuery();
+                this.connect.Close();
+                return res;
             }
-            return site.Id;
+            
         }
 
-      
 
         public void Supprimer(int Id)
         {
@@ -67,10 +87,30 @@ namespace WindowsFormsApp1.gestionSites
             }
             return null;
         }
-        public List<Site> GetSites()
+        public List <String> GetSites()
         {
-            return liste_sites;
+            List <String> sites = new List <String>();
+
+            string cmdString = "SELECT * from Site";
+            this.connect.Open();
+
+            SqlCommand cmd = new SqlCommand(cmdString, this.connect);
+
+            SqlDataReader rdr = cmd.ExecuteReader();
+            if (rdr.HasRows == true)
+            {
+                while (rdr.Read())
+                {
+                    sites.Add(rdr["City"].ToString());
+                }
+            }
+            rdr.Close();
+            this.connect.Close();
+            return sites;
+
         }
+
+     
 
         public Site Start()
         {

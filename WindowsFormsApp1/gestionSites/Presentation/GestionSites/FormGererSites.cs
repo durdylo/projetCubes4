@@ -8,13 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.gestionSites;
+using System.Data.SqlClient;
 
 namespace WindowsFormsApp1.Presentation.GestionSites
 {
     public partial class FormGererSites : Form
     {
+
+        static string connexionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=projet_4Ind;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+
+        public static SqlConnection cnx = new SqlConnection(connexionString);
+        GestionnaireSites gestionSite = new GestionnaireSites(cnx);
+        public GestionnaireSites gererSites;
         public FormGererSites()
         {
+
             InitializeComponent();
         }
 
@@ -45,12 +53,12 @@ namespace WindowsFormsApp1.Presentation.GestionSites
         {
             Site site = new Site();
             site.City = txt_City.Text;
-            new GestionnaireSites().Ajouter(site);
+            Console.WriteLine(gestionSite.Ajouter(site));
         }
 
         private void bt_start_Click(object sender, EventArgs e)
         {
-            Site site = new GestionnaireSites().Start();
+            Site site =  gererSites.Start();
             this.Afficher(site);
         }
 
@@ -65,19 +73,19 @@ namespace WindowsFormsApp1.Presentation.GestionSites
 
         private void bt_next_Click(object sender, EventArgs e)
         {
-            Site site = new GestionnaireSites().Next(int.Parse(lbl_id.Text));
+            Site site = gererSites.Next(int.Parse(lbl_id.Text));
             this.Afficher(site);
         }
 
         private void bt_precede_Click(object sender, EventArgs e)
         {
-            Site site = new GestionnaireSites().Next(int.Parse(lbl_id.Text));
+            Site site = gererSites.Next(int.Parse(lbl_id.Text));
             this.Afficher(site);
         }
 
         private void bt_end_Click(object sender, EventArgs e)
         {
-            Site site = new GestionnaireSites().End();
+            Site site = gererSites.End();
             this.Afficher(site);
         }
     }

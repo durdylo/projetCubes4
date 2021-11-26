@@ -8,8 +8,8 @@ using static WindowsFormsApp1.gestionSites.GestionnaireSites;
 using static WindowsFormsApp1.gestionSites.Site;
 using static WindowsFormsApp1.gestionServices.GestionServices;
 using static WindowsFormsApp1.gestionServices.Services;
-
-
+using System.Data.SqlClient;
+using System.Data;
 
 namespace WindowsFormsApp1
 {
@@ -21,13 +21,9 @@ namespace WindowsFormsApp1
         [STAThread]
         static void Main()
         {
-            Site site = new Site();
-            GestionnaireSites gestionSite = new GestionnaireSites();
-            site.City = "Paris";
             Application.EnableVisualStyles();
-            gestionSite.Ajouter(site);
-            Console.WriteLine("dcdscsdcsdcscscscsdcscscdsc");
-            Console.WriteLine(gestionSite.GetSites());
+
+       
 
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FormApplication());

@@ -1,0 +1,5 @@
+﻿CREATE TABLE [Site]
+(
+	[Id] INT NOT NULL PRIMARY KEY, 
+    [City] NCHAR(99) NOT NULL
+)
