@@ -60,10 +60,23 @@
     <Compile Include="FormApplication.Designer.cs">
       <DependentUpon>FormApplication.cs</DependentUpon>
     </Compile>
-	  <Compile Include="gestionServices\GestionServices.cs" />
-	  <Compile Include="gestionServices\Services.cs" />
-
-	  <Compile Include="gestionSites\GestionnaireSites.cs" />
+    <Compile Include="gestionSalaries\Presentation\GestionSalaries\FormGererSalaries.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gestionSalaries\Presentation\GestionSalaries\FormGererSalaries.Designer.cs">
+      <DependentUpon>FormGererSalaries.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gestionServices\GestionnaireServices.cs" />
+    <Compile Include="gestionServices\Presentation\GestionServices\FormGererServices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gestionServices\Presentation\GestionServices\FormGererServices.Designer.cs">
+      <DependentUpon>FormGererServices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gestionServices\Service.cs" />
+    <Compile Include="gestionSites\GestionnaireSites.cs" />
+    <Compile Include="gestionSalaries\GestionnaireSalaries.cs" />
+    <Compile Include="gestionSalaries\Salaries.cs" />
     <Compile Include="gestionSites\Site.cs" />
     <Compile Include="gestionSites\Presentation\GestionSites\FormGererSites.cs">
       <SubType>Form</SubType>
@@ -78,6 +91,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormApplication.resx">
       <DependentUpon>FormApplication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gestionSalaries\Presentation\GestionSalaries\FormGererSalaries.resx">
+      <DependentUpon>FormGererSalaries.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gestionServices\Presentation\GestionServices\FormGererServices.resx">
+      <DependentUpon>FormGererServices.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gestionSites\Presentation\GestionSites\FormGererSites.resx">
       <DependentUpon>FormGererSites.cs</DependentUpon>

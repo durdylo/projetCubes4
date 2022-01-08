@@ -6,8 +6,8 @@ using System.Windows.Forms;
 using WindowsFormsApp1.gestionSites;
 using static WindowsFormsApp1.gestionSites.GestionnaireSites;
 using static WindowsFormsApp1.gestionSites.Site;
-using static WindowsFormsApp1.gestionServices.GestionServices;
-using static WindowsFormsApp1.gestionServices.Services;
+using static WindowsFormsApp1.gestionServices.GestionnaireServices;
+using static WindowsFormsApp1.gestionServices.Service;
 using System.Data.SqlClient;
 using System.Data;
 
@@ -22,9 +22,6 @@ namespace WindowsFormsApp1
         static void Main()
         {
             Application.EnableVisualStyles();
-
-       
-
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FormApplication());
         }

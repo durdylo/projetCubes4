@@ -11,3 +11,5 @@ C:\Users\denis\OneDrive\Documents\cesi\projet_4\WindowsFormsApp1\obj\Debug\Windo
 C:\Users\denis\OneDrive\Documents\cesi\projet_4\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
 C:\Users\denis\OneDrive\Documents\cesi\projet_4\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
 C:\Users\denis\OneDrive\Documents\cesi\projet_4\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FormApplication.resources
+C:\Users\denis\OneDrive\Documents\cesi\projet_4\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.gestionServices.Présentation.GestionServices.FormGererServices.resources
+C:\Users\denis\OneDrive\Documents\cesi\projet_4\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.gestionSalaries.Presentation.GestionSalaries.FormGererSalaries.resources

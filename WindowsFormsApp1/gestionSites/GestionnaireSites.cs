@@ -18,24 +18,13 @@ namespace WindowsFormsApp1.gestionSites
             this.connect = cnx;
         }
 
-        static List<Site> liste_sites = new List<Site>() ;
+        private static List<Site> liste_sites = new List<Site>() ;
         private static int NombreSites;
 
 
         public int Ajouter(Site site)
         {
-            /*  if(site.Id != 0)
-
-                  throw new AjouterObjetExistantException("Vous essayez d'ajouter un objet déjà existant");
-              else
-              {
-                  site.Id = ++GestionnaireSites.NombreSites;
-                  site.DateCreate1 = DateTime.Now;    
-
-                  liste_sites.Add(site);
-              }
-              return site.Id;*/
-
+         
             string cmdString = "INSERT INTO Site (City) VALUES (@val1)";
             using (SqlCommand comm = new SqlCommand(cmdString, this.connect))
             {
@@ -49,47 +38,53 @@ namespace WindowsFormsApp1.gestionSites
         }
 
 
-        public void Supprimer(int Id)
+        public void Supprimer(int idSite)
         {
-            Site site = this.SearchById(Id);
-            liste_sites.Remove(site);
+            string cmdString = "DELETE FROM Site WHERE Id = " + idSite;
+            if (idSite == 0)
+                throw new ModifierObjetInexistant("Vous essayez de suprimer un objet inexistant");
+            using (SqlCommand comm = new SqlCommand(cmdString, this.connect))
+            {
+                this.connect.Open();
+                int res = comm.ExecuteNonQuery();
+                this.connect.Close();
+            }
         } 
 
-        public void Modifier(Site site)
+        public Site Modifier(int idSite, string newName)
         {
-            if (site.Id == 0)
+
+            string cmdString = "UPDATE Site SET City = '"+newName+"' WHERE Id = " + idSite;
+            if (idSite == 0)
                 throw new ModifierObjetInexistant("Vous essayez de mofier un objet inexistant");
-            Site s = this.SearchById(site.Id);
-            //Methode 1
-            /* s.Id = site.Id;
-             s.City = site.City;
-             s.DateModif1 = site.DateModif1;
-             s.DateCreate1 = site.DateCreate1;*/
-            // Methode 2
-            site.DateCreate1 = DateTime.Now;
-            liste_sites.Insert(liste_sites.IndexOf(s), site);
-            Console.WriteLine("register");
+            using (SqlCommand comm = new SqlCommand(cmdString, this.connect))
+            {
+                this.connect.Open();
+                int res = comm.ExecuteNonQuery();
+                this.connect.Close();
+            }
+            Site s = this.SearchById(idSite);
+            return s;
         }
 
-        /// <summary>
-        /// Rechercher un site par son Id
-        /// </summary>
-        /// <param name="Id"></param>
-        /// <returns></returns>
-        public Site SearchById(int Id)
+        
+        public Site SearchById(int id)
         {
-            foreach (Site site in liste_sites)
+            List<Site> sites = this.GetSites();
+
+            foreach (Site site in sites)
             {
-                if(site.Id == Id)
+                if(site.Id == id)
                 {
+                    
                     return site;
                 }
             }
             return null;
         }
-        public List <String> GetSites()
+        public List <Site> GetSites()
         {
-            List <String> sites = new List <String>();
+            List <Site> sites = new List <Site>();
 
             string cmdString = "SELECT * from Site";
             this.connect.Open();
@@ -101,7 +96,10 @@ namespace WindowsFormsApp1.gestionSites
             {
                 while (rdr.Read())
                 {
-                    sites.Add(rdr["City"].ToString());
+                    Site site = new Site();
+                    site.Id = (int)rdr["Id"];
+                    site.City = rdr["City"].ToString();
+                    sites.Add(site);
                 }
             }
             rdr.Close();
@@ -114,35 +112,49 @@ namespace WindowsFormsApp1.gestionSites
 
         public Site Start()
         {
-            if(liste_sites.Count > 0)
-                return liste_sites[0];
+            List<Site> sites = this.GetSites();
+            if(sites.Count > 0)
+                return sites[0];
             else
                 return null;
         }
 
         public Site End()
         {
-            if (liste_sites.Count > 0)
-                return liste_sites[liste_sites.Count - 1];
+            List<Site> sites = this.GetSites();
+
+            if (sites.Count > 0)
+                return sites[sites.Count - 1];
             else
                 return null;
         }
 
         public Site Next(int id)
         {
+            List<Site> sites = this.GetSites();
             Site site = this.SearchById(id);
-            int index = liste_sites.IndexOf(site);
-            if ((liste_sites.Count - 1) >= (index + 1))
-                return liste_sites[index + 1];
+            int index = sites.IndexOf(site);
+            Console.WriteLine(site);
+
+            if ((sites.Count - 1) >= (index + 1))
+            {
+                Console.WriteLine("Jai trouvé");
+                Console.WriteLine(sites[index + 1].Id.ToString());
+
+                return sites[index + 1];
+            }
+              
             else
                 return null;
         }
         public Site Preced(int id)
         {
+            List<Site> sites = this.GetSites();
+
             Site site = this.SearchById(id);
-            int index = liste_sites.IndexOf(site);
-            if ((liste_sites.Count - 1) >= (index - 1))
-                return liste_sites[index - 1];
+            int index = sites.IndexOf(site);
+            if ((sites.Count - 1) >= (index - 1))
+                return sites[index - 1];
             else
                 return null;
         }
