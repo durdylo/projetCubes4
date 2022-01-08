@@ -8,7 +8,7 @@ namespace WindowsFormsApp1.gestionSalaries
 {
     public class GestionnaireSalaries
     {
-        List<Salaries> liste_salaries = new List<Salaries>();
+        List<Salarie> liste_salaries = new List<Salarie>();
         private static int NombreSalaries;
         private SqlConnection connect;
 
@@ -31,13 +31,13 @@ namespace WindowsFormsApp1.gestionSalaries
 
         public void Supprimer(int Id)
         {
-            Salaries salaries = this.SearchById(Id);
-            liste_salaries.Remove(salaries);
+            Salarie salarie = this.SearchById(Id);
+            liste_salaries.Remove(salarie);
         }
 
-        public List<Salaries> GetSalaries()
+        public List<Salarie> GetSalaries()
         {
-            List<Salaries> services = new List<Salaries>();
+            List<Salarie> salaries = new List<Salarie>();
 
             string cmdString = "SELECT * from Salaries";
             this.connect.Open();
@@ -49,22 +49,22 @@ namespace WindowsFormsApp1.gestionSalaries
             {
                 while (rdr.Read())
                 {
-                    Salaries salaries = new Salaries();
-                    salaries.Id = (int)rdr["Id"];
-                    salaries.Nom = (string)rdr["name"];
-                    salaries.Telephone_fixe = (string)rdr["tel_fix"];
-                    salaries.Telephone_portable = (string)rdr["tel_port"];
-                    salaries.Email = (string)rdr["email"];
-                    services.Add(salaries);
+                    Salarie salarie = new Salarie();
+                    salarie.Id = (int)rdr["Id"];
+                    salarie.Nom = (string)rdr["name"];
+                    salarie.Telephone_fixe = (string)rdr["tel_fix"];
+                    salarie.Telephone_portable = (string)rdr["tel_port"];
+                    salarie.Email = (string)rdr["email"];
+                    salaries.Add(salarie);
                 }
             }
             rdr.Close();
             this.connect.Close();
-            return services;
+            return salaries;
         }
-            public Salaries SearchById(int Id)
+            public Salarie SearchById(int Id)
         {
-            foreach (Salaries salaries in liste_salaries)
+            foreach (Salarie salaries in liste_salaries)
             {
                 if (salaries.Id == Id)
                 {
@@ -74,60 +74,13 @@ namespace WindowsFormsApp1.gestionSalaries
             return null;
         }
 
-        public void Modifier(Salaries salaries)
+        public void Modifier(Salarie salaries)
         {
             if (salaries.Id == 0)
                 throw new ModifierObjetInexistant("Vous essayez de mofier un objet inexistant");
-            Salaries s = this.SearchById(salaries.Id);
-            salaries.DateCreate1 = DateTime.Now;
+            Salarie s = this.SearchById(salaries.Id);
             liste_salaries.Insert(liste_salaries.IndexOf(s), salaries); // 
             Console.WriteLine("register");
-        }
-
-        public Salaries Start()
-        {
-            if (liste_salaries.Count > 0)
-                return liste_salaries[0];
-            else
-                return null;
-        }
-
-        public Salaries End()
-        {
-            if (liste_salaries.Count > 0)
-                return liste_salaries[liste_salaries.Count - 1];
-            else
-                return null;
-        }
-
-        public Salaries Next(int id)
-        {
-            Salaries site = this.SearchById(id);
-            int index = liste_salaries.IndexOf(site);
-            if ((liste_salaries.Count - 1) >= (index + 1))
-                return liste_salaries[index + 1];
-            else
-                return null;
-        }
-        public Salaries Preced(int id)
-        {
-            Salaries site = this.SearchById(id);
-            int index = liste_salaries.IndexOf(site);
-            if ((liste_salaries.Count - 1) >= (index - 1))
-                return liste_salaries[index - 1];
-            else
-                return null;
-        }
-
-        public void PrintListSalaries(List<Salaries> sal)
-        {
-            int i;
-
-            for (i = 0; i < sal.Count(); i++)
-            {
-                Console.WriteLine(sal[i].Nom);
-                Console.WriteLine(i);
-            }
         }
     }
 }

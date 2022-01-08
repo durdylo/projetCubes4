@@ -2,7 +2,7 @@
 
 namespace WindowsFormsApp1.gestionSalaries
 {
-    public class Salaries
+    public class Salarie
     {
         // INT Attribute
         int id;
@@ -15,13 +15,15 @@ namespace WindowsFormsApp1.gestionSalaries
         String email;
 
         // Object Attribute
-        Object services;
-        Object sites;
+        int idService;
+        int idSite;
 
- 
+
 
         // INT Accessor
         public int Id { get => id; set => id = value; }
+        public int IdService { get => idService; set => idService = value; }
+        public int IdSite { get => idSite; set => idSite = value; }
 
         // String Accessor
         public String Nom { get => nom; set => nom = value; }
@@ -30,9 +32,7 @@ namespace WindowsFormsApp1.gestionSalaries
         public String Telephone_portable { get => telephone_portable; set => telephone_portable = value; }
         public String Email { get => email; set => email = value; }
 
-        //Object Accessor 
-        public Object Services { get => services; set => services = value; }
-        public Object Sites { get => sites; set => sites = value; }
+      
 
       
 
