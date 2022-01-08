@@ -16,7 +16,7 @@ namespace WindowsFormsApp1.gestionSalaries
         {
             this.connect = cnx;
         }
-        public int Ajouter(Salaries salaries)
+        public int Ajouter(Salarie salaries)
         {
             if (salaries.Id != 0)
 
@@ -55,6 +55,8 @@ namespace WindowsFormsApp1.gestionSalaries
                     salarie.Telephone_fixe = (string)rdr["tel_fix"];
                     salarie.Telephone_portable = (string)rdr["tel_port"];
                     salarie.Email = (string)rdr["email"];
+                    salarie.IdService = (int)rdr["id_service"];
+                    salarie.IdSite = (int)rdr["id_site"];
                     salaries.Add(salarie);
                 }
             }

@@ -76,7 +76,7 @@
     <Compile Include="gestionServices\Service.cs" />
     <Compile Include="gestionSites\GestionnaireSites.cs" />
     <Compile Include="gestionSalaries\GestionnaireSalaries.cs" />
-    <Compile Include="gestionSalaries\Salaries.cs" />
+    <Compile Include="gestionSalaries\Salarie.cs" />
     <Compile Include="gestionSites\Site.cs" />
     <Compile Include="gestionSites\Presentation\GestionSites\FormGererSites.cs">
       <SubType>Form</SubType>
