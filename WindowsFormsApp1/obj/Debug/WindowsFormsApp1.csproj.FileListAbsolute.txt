@@ -1,3 +1,29 @@
+<<<<<<< HEAD
+C:\Users\denis\OneDrive\Documents\cesi\projet_4\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\denis\OneDrive\Documents\cesi\projet_4\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\denis\OneDrive\Documents\cesi\projet_4\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\denis\OneDrive\Documents\cesi\projet_4\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
+C:\Users\denis\OneDrive\Documents\cesi\projet_4\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.SuggestedBindingRedirects.cache
+C:\Users\denis\OneDrive\Documents\cesi\projet_4\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Presentation.GestionSites.FormGererSites.resources
+C:\Users\denis\OneDrive\Documents\cesi\projet_4\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\denis\OneDrive\Documents\cesi\projet_4\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+C:\Users\denis\OneDrive\Documents\cesi\projet_4\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+C:\Users\denis\OneDrive\Documents\cesi\projet_4\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\denis\OneDrive\Documents\cesi\projet_4\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\denis\OneDrive\Documents\cesi\projet_4\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\alessandro\Documents\ProjetCsharp\projetCubes4\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\alessandro\Documents\ProjetCsharp\projetCubes4\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\alessandro\Documents\ProjetCsharp\projetCubes4\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\alessandro\Documents\ProjetCsharp\projetCubes4\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
+C:\Users\alessandro\Documents\ProjetCsharp\projetCubes4\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.SuggestedBindingRedirects.cache
+C:\Users\alessandro\Documents\ProjetCsharp\projetCubes4\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\alessandro\Documents\ProjetCsharp\projetCubes4\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Presentation.GestionSites.FormGererSites.resources
+C:\Users\alessandro\Documents\ProjetCsharp\projetCubes4\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\alessandro\Documents\ProjetCsharp\projetCubes4\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+C:\Users\alessandro\Documents\ProjetCsharp\projetCubes4\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+C:\Users\alessandro\Documents\ProjetCsharp\projetCubes4\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\alessandro\Documents\ProjetCsharp\projetCubes4\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+=======
 C:\Users\denis\OneDrive\Documents\cesi\projet_4\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
 C:\Users\denis\OneDrive\Documents\cesi\projet_4\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
 C:\Users\denis\OneDrive\Documents\cesi\projet_4\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
@@ -11,3 +37,4 @@ C:\Users\denis\OneDrive\Documents\cesi\projet_4\WindowsFormsApp1\obj\Debug\Windo
 C:\Users\denis\OneDrive\Documents\cesi\projet_4\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
 C:\Users\denis\OneDrive\Documents\cesi\projet_4\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
 C:\Users\denis\OneDrive\Documents\cesi\projet_4\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FormApplication.resources
+>>>>>>> a89c970bb6f2fb999bda8841c5c5dc79ef856acd
