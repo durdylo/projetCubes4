@@ -19,7 +19,7 @@ namespace WindowsFormsApp1
 {
     public partial class FormApplication : Form
     {
-        static string connexionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=projet_4Ind;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        static string connexionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\denis\OneDrive\Documents\cesi\projet_4\WindowsFormsApp1\projet_4Ind.mdf;Integrated Security=True;Connect Timeout=30";
         public static SqlConnection cnx = new SqlConnection(connexionString);
 
         GestionnaireSites gestionSite = new GestionnaireSites(cnx);
@@ -29,6 +29,7 @@ namespace WindowsFormsApp1
 
         public FormApplication()
         {
+
             InitializeComponent();
         }
 
@@ -89,6 +90,76 @@ namespace WindowsFormsApp1
             FormGererServices form = new FormGererServices();
             form.gererService = gestionServices;
             form.Show();
+        }
+
+        private void servicesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void FormApplication_Load(object sender, EventArgs e)
+        {
+            // TODO: cette ligne de code charge les données dans la table 'projet_4IndDataSet.Site'. Vous pouvez la déplacer ou la supprimer selon les besoins.
+            this.siteTableAdapter.Fill(this.projet_4IndDataSet.Site);
+            // TODO: cette ligne de code charge les données dans la table 'projet_4IndDataSet2.Service'. Vous pouvez la déplacer ou la supprimer selon les besoins.
+            this.serviceTableAdapter.Fill(this.projet_4IndDataSet2.Service);
+            // TODO: cette ligne de code charge les données dans la table 'projet_4IndDataSet3.Salary'. Vous pouvez la déplacer ou la supprimer selon les besoins.
+            this.salaryTableAdapter.Fill(this.projet_4IndDataSet3.Salary);
+            menuStrip1.Visible = false;
+            GridFill(gestionSalaries.GetSalaries());
+        }
+
+        private void FormApplication_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode == Keys.G)
+            {
+                adminPassword form = new adminPassword();
+                this.Hide();
+                form.Show();
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+        void GridFill(List<Salarie> salaries)
+        {
+            dataGridView1.DataSource = salaries;
+        }
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            List<Salarie> salaries = new List<Salarie>();
+            salaries = gestionSalaries.GetSalariesByService(Convert.ToInt32(comboBox1.SelectedValue));
+            GridFill(salaries);
+        }
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            List<Salarie> salaries = new List<Salarie>();
+            salaries = gestionSalaries.GetSalariesBySite(Convert.ToInt32(comboBox2.SelectedValue));
+            GridFill(salaries);
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            GridFill(gestionSalaries.GetSalaries());
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            List<Salarie> salaries = new List<Salarie>();
+            salaries = gestionSalaries.GetSalariesByName((textBox2.Text));
+            GridFill(salaries);
         }
     }
 }

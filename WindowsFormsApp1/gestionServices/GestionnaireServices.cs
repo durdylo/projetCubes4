@@ -12,7 +12,6 @@ namespace WindowsFormsApp1.gestionServices
     public class GestionnaireServices
     {
         List<Service> liste_service = new List<Service>();
-        private static int NombreSites;
 
         private SqlConnection connect;
 

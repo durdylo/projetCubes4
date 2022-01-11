@@ -13,3 +13,6 @@ C:\Users\denis\OneDrive\Documents\cesi\projet_4\WindowsFormsApp1\obj\Debug\Windo
 C:\Users\denis\OneDrive\Documents\cesi\projet_4\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FormApplication.resources
 C:\Users\denis\OneDrive\Documents\cesi\projet_4\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.gestionServices.Présentation.GestionServices.FormGererServices.resources
 C:\Users\denis\OneDrive\Documents\cesi\projet_4\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.gestionSalaries.Presentation.GestionSalaries.FormGererSalaries.resources
+C:\Users\denis\OneDrive\Documents\cesi\projet_4\WindowsFormsApp1\bin\Debug\projet_4Ind.mdf
+C:\Users\denis\OneDrive\Documents\cesi\projet_4\WindowsFormsApp1\bin\Debug\projet_4Ind_log.ldf
+C:\Users\denis\OneDrive\Documents\cesi\projet_4\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.adminPassword.resources

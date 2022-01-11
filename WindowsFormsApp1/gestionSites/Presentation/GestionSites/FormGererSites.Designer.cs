@@ -96,11 +96,12 @@
             // 
             // dataGridSites
             // 
+            this.dataGridSites.AllowUserToOrderColumns = true;
             this.dataGridSites.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridSites.Location = new System.Drawing.Point(554, 104);
+            this.dataGridSites.Location = new System.Drawing.Point(548, 104);
             this.dataGridSites.Name = "dataGridSites";
             this.dataGridSites.ShowCellErrors = false;
-            this.dataGridSites.Size = new System.Drawing.Size(460, 231);
+            this.dataGridSites.Size = new System.Drawing.Size(466, 315);
             this.dataGridSites.TabIndex = 16;
             this.dataGridSites.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridSites_CellContentClick);
             this.dataGridSites.DoubleClick += new System.EventHandler(this.dataGridSites_DoubleClick);

@@ -12,8 +12,9 @@ namespace WindowsFormsApp1.gestionSalaries
         String prenom;
         String telephone_fixe;
         String telephone_portable;
-        String email;
-
+        String email; 
+        String service;
+        String site;
         // Object Attribute
         int idService;
         int idSite;
@@ -31,10 +32,7 @@ namespace WindowsFormsApp1.gestionSalaries
         public String Telephone_fixe { get => telephone_fixe; set => telephone_fixe = value; }
         public String Telephone_portable { get => telephone_portable; set => telephone_portable = value; }
         public String Email { get => email; set => email = value; }
-
-      
-
-      
-
+        public string Service { get => service; set => service = value; }
+        public string Site { get => site; set => site = value; }
     }
 }

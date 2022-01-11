@@ -16,30 +16,135 @@ namespace WindowsFormsApp1.gestionSalaries
         {
             this.connect = cnx;
         }
-        public int Ajouter(Salarie salaries)
+        public int Ajouter(Salarie salarie)
         {
-            if (salaries.Id != 0)
-
-                throw new AjouterObjetExistantException("Vous essayez d'ajouter un objet déjà existant");
-            else
+            string cmdString = "INSERT INTO Salary (name, firstname, tel_fix, tel_port, email, id_service, id_site) VALUES (@name, @firstname, @telFix, @telPort, @email, @idService, @idSite)";
+            using (SqlCommand comm = new SqlCommand(cmdString, this.connect))
             {
-                salaries.Id = ++GestionnaireSalaries.NombreSalaries;
-                liste_salaries.Add(salaries);
+                this.connect.Open();
+                comm.Parameters.AddWithValue("@name", salarie.Nom);
+                comm.Parameters.AddWithValue("@firstname", salarie.Prenom);
+                comm.Parameters.AddWithValue("@telFix", salarie.Telephone_fixe);
+                comm.Parameters.AddWithValue("@telPort", salarie.Telephone_portable);
+                comm.Parameters.AddWithValue("@email", salarie.Email);
+                comm.Parameters.AddWithValue("@idService", salarie.IdService);
+                comm.Parameters.AddWithValue("@IdSite", salarie.IdSite);
+                int res = comm.ExecuteNonQuery();
+                this.connect.Close();
+                return res;
             }
-            return salaries.Id;
         }
 
         public void Supprimer(int Id)
         {
-            Salarie salarie = this.SearchById(Id);
-            liste_salaries.Remove(salarie);
+            string cmdString = "DELETE FROM Salary WHERE Id = " + Id;
+            if (Id == 0)
+                throw new ModifierObjetInexistant("Vous essayez de suprimer un objet inexistant");
+            using (SqlCommand comm = new SqlCommand(cmdString, this.connect))
+            {
+                this.connect.Open();
+                int res = comm.ExecuteNonQuery();
+                this.connect.Close();
+            }
         }
+        public List<Salarie> GetSalariesBySite(int idCity)
+        {
+            List<Salarie> salaries = new List<Salarie>();
 
+            string cmdString = "SELECT Salary.*, Site.city as villeSite, Service.name as nomService from Salary LEFT JOIN Site on Site.id = Salary.id_site LEFT JOIN Service on Service.id = Salary.id_service WHERE Salary.id_site = " + idCity;
+            this.connect.Open();
+            SqlCommand cmd = new SqlCommand(cmdString, this.connect);
+
+            SqlDataReader rdr = cmd.ExecuteReader();
+            if (rdr.HasRows == true)
+            {
+                while (rdr.Read())
+                {
+                    Salarie salarie = new Salarie();
+                    salarie.Id = (int)rdr["Id"];
+                    salarie.Nom = (string)rdr["name"];
+                    salarie.Prenom = (string)rdr["firstname"];
+                    salarie.Telephone_fixe = (string)rdr["tel_fix"];
+                    salarie.Telephone_portable = (string)rdr["tel_port"];
+                    salarie.Email = (string)rdr["email"];
+                    salarie.Service = (string)rdr["nomService"];
+                    salarie.Site = (string)rdr["villeSite"];
+                    salarie.IdService = (int)rdr["id_service"];
+                    salarie.IdSite = (int)rdr["id_site"];
+                    salaries.Add(salarie);
+                }
+            }
+            rdr.Close();
+            this.connect.Close();
+            return salaries;
+        }
+        public List<Salarie> GetSalariesByName(String stringName)
+        {
+            List<Salarie> salaries = new List<Salarie>();
+
+            string cmdString = "SELECT Salary.*, Site.city as villeSite, Service.name as nomService from Salary LEFT JOIN Site on Site.id = Salary.id_site LEFT JOIN Service on Service.id = Salary.id_service WHERE Salary.name LIKE '%" + stringName + "%' OR Salary.firstname LIKE '%" + stringName + "%' ";
+            this.connect.Open();
+            SqlCommand cmd = new SqlCommand(cmdString, this.connect);
+
+            SqlDataReader rdr = cmd.ExecuteReader();
+            if (rdr.HasRows == true)
+            {
+                while (rdr.Read())
+                {
+                    Salarie salarie = new Salarie();
+                    salarie.Id = (int)rdr["Id"];
+                    salarie.Nom = (string)rdr["name"];
+                    salarie.Prenom = (string)rdr["firstname"];
+                    salarie.Telephone_fixe = (string)rdr["tel_fix"];
+                    salarie.Telephone_portable = (string)rdr["tel_port"];
+                    salarie.Email = (string)rdr["email"];
+                    salarie.Service = (string)rdr["nomService"];
+                    salarie.Site = (string)rdr["villeSite"];
+                    salarie.IdService = (int)rdr["id_service"];
+                    salarie.IdSite = (int)rdr["id_site"];
+                    salaries.Add(salarie);
+                }
+            }
+            rdr.Close();
+            this.connect.Close();
+            return salaries;
+        }
+        public List<Salarie> GetSalariesByService(int idService)
+        {
+            List<Salarie> salaries = new List<Salarie>();
+
+            string cmdString = "SELECT Salary.*, Site.city as villeSite, Service.name as nomService from Salary LEFT JOIN Site on Site.id = Salary.id_site LEFT JOIN Service on Service.id = Salary.id_service WHERE Salary.id_service = " + idService;
+            this.connect.Open();
+            SqlCommand cmd = new SqlCommand(cmdString, this.connect);
+
+            SqlDataReader rdr = cmd.ExecuteReader();
+            if (rdr.HasRows == true)
+            {
+                while (rdr.Read())
+                {
+                    Salarie salarie = new Salarie();
+                    salarie.Id = (int)rdr["Id"];
+                    salarie.Nom = (string)rdr["name"];
+                    salarie.Prenom = (string)rdr["firstname"];
+                    salarie.Telephone_fixe = (string)rdr["tel_fix"];
+                    salarie.Telephone_portable = (string)rdr["tel_port"];
+                    salarie.Email = (string)rdr["email"];
+                    salarie.Service = (string)rdr["nomService"];
+                    salarie.Site = (string)rdr["villeSite"];
+                    salarie.IdService = (int)rdr["id_service"];
+                    salarie.IdSite = (int)rdr["id_site"];
+                    salaries.Add(salarie);
+                }
+            }
+            rdr.Close();
+            this.connect.Close();
+            return salaries;
+        }
         public List<Salarie> GetSalaries()
         {
             List<Salarie> salaries = new List<Salarie>();
 
-            string cmdString = "SELECT * from Salaries";
+            string cmdString = "SELECT Salary.*, Site.city as villeSite, Service.name as nomService from Salary LEFT JOIN Site on Site.id = Salary.id_site LEFT JOIN Service on Service.id = Salary.id_service";
             this.connect.Open();
 
             SqlCommand cmd = new SqlCommand(cmdString, this.connect);
@@ -52,9 +157,12 @@ namespace WindowsFormsApp1.gestionSalaries
                     Salarie salarie = new Salarie();
                     salarie.Id = (int)rdr["Id"];
                     salarie.Nom = (string)rdr["name"];
+                    salarie.Prenom = (string)rdr["firstname"];
                     salarie.Telephone_fixe = (string)rdr["tel_fix"];
                     salarie.Telephone_portable = (string)rdr["tel_port"];
                     salarie.Email = (string)rdr["email"];
+                    salarie.Service = (string)rdr["nomService"];
+                    salarie.Site = (string)rdr["villeSite"];
                     salarie.IdService = (int)rdr["id_service"];
                     salarie.IdSite = (int)rdr["id_site"];
                     salaries.Add(salarie);
@@ -65,24 +173,34 @@ namespace WindowsFormsApp1.gestionSalaries
             return salaries;
         }
             public Salarie SearchById(int Id)
-        {
-            foreach (Salarie salaries in liste_salaries)
             {
-                if (salaries.Id == Id)
+            List<Salarie> salaries = this.GetSalaries();
+
+            foreach (Salarie salarie in salaries)
+            {
+                if (salarie.Id == Id)
                 {
-                    return salaries;
+                    return salarie;
                 }
             }
             return null;
         }
 
-        public void Modifier(Salarie salaries)
+        public Salarie Modifier(int idSalary, Salarie salarie)
         {
-            if (salaries.Id == 0)
+
+            string cmdString = "UPDATE Salary SET name ='" + salarie.Nom + "', firstname = '" + salarie.Prenom + "', tel_fix ='" + salarie.Telephone_fixe + "', tel_port = '" + salarie.Telephone_portable + "', email = '" + salarie.Email + "', id_service = " + salarie.IdService + ", id_site = " + salarie.IdSite + " WHERE Id =  " + idSalary;
+            if (idSalary == 0)
                 throw new ModifierObjetInexistant("Vous essayez de mofier un objet inexistant");
-            Salarie s = this.SearchById(salaries.Id);
-            liste_salaries.Insert(liste_salaries.IndexOf(s), salaries); // 
-            Console.WriteLine("register");
+            using (SqlCommand comm = new SqlCommand(cmdString, this.connect))
+            {
+                this.connect.Open();
+            
+                int res = comm.ExecuteNonQuery();
+                this.connect.Close();
+            }
+            Salarie s = this.SearchById(idSalary);
+            return s;
         }
     }
 }

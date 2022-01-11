@@ -15,7 +15,7 @@ namespace WindowsFormsApp1.Presentation.GestionSites
     public partial class FormGererSites : Form
     {
 
-        static string connexionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=projet_4Ind;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        static string connexionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\denis\OneDrive\Documents\cesi\projet_4\WindowsFormsApp1\projet_4Ind.mdf;Integrated Security=True;Connect Timeout=30";
         private int currentId;
         public static SqlConnection cnx = new SqlConnection(connexionString);
         GestionnaireSites gestionSite = new GestionnaireSites(cnx);
@@ -126,7 +126,6 @@ namespace WindowsFormsApp1.Presentation.GestionSites
                 currentId = Convert.ToInt32(dataGridSites.CurrentRow.Cells[0].Value.ToString());
                 bt_sup.Enabled = true;
                 bt_new.Text = "Modifier";
-
             }
         }
         void GridFill()
